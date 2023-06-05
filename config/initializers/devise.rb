@@ -1,17 +1,4 @@
 # frozen_string_literal: true
-class TurboFailureApp < Devise::FailureApp
-  def respond
-    if request_format == :turbo_stream
-      redirect
-    else
-      super
-    end
-  end
-
-  def skip_format?
-    %w(html turbo_stream */*).include? request_format.to_s
-  end
-end
 
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
@@ -27,11 +14,11 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '1afe3acfceeb62431faf96c204712bb737fe66748348148fa370adb08d272903a62e02f11b96925a93ed07cbef8cfb5af5bdeac3db8b9ccf42a8627a1a000cfb'
+  # config.secret_key = '46429616ab0aa1cd43b4a05d289139c7f79d27c7bec00ac86955458ffe74472691282b7a4639bb85c1e0c8dd344da92d501bf00c93951761abd1cdf3d92e7f8e'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
-  config.parent_controller = 'Users::DeviseController'
+  # config.parent_controller = 'DeviseController'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -139,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'd0e32dc0a128931388db82b73b31552bd4bff49e4c040c2407ea7ed35ca43f6191154618c1116c76d206c6e0acab9df8977761816da48cfe3f20abc663dbf251'
+  # config.pepper = 'a0ba314355abf9993a5c7fc34c46b538015a3d6c75a64c84e8c4fab45756caa50afdd88461f7d7b823930a0287509528f34bd66688fdc133adbe98520b9b3136'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -287,9 +274,6 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
   # ==> Warden configuration
-  config.warden do |manager|
-    manager.failure_app = TurboFailureApp
-  end
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
   #
