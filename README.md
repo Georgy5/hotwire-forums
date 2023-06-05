@@ -1,24 +1,41 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Implementation of the Rails 7 tutorial by Andrea Fomera [Learn Hotwire by building a Forum](https://store.afomera.dev/learn-hotwire) to learn [Hotwire](https://hotwired.dev).
 
-Things you may want to cover:
+* Ruby version:\
+  Ruby 3.2.2
 
-* Ruby version
+* Rails version:\
+  Rails 7.0.5
 
-* System dependencies
+* System dependencies:\
+  Yarn package manager (or NPM - I used Yarn 1.22.x)\
+  Bundler (I used version 2.4.x)
 
-* Configuration
+* Database creation:\
+  Run `bin/rails db:create`\
+  Run `bin/rails db:migrate`
 
-* Database creation
+* Database initialization:\
+  Run `bin/rails db:seed`
+  
+## Getting Started
 
-* Database initialization
+To get a local copy up and running follow these steps.
 
-* How to run the test suite
+- Change to the desired directory then run the following:
 
-* Services (job queues, cache servers, search engines, etc.)
+  - Git clone the project
+  - cd hotwire-forums/
+  - run `rails db:create`
 
-* Deployment instructions
+## Running the Application Locally
 
-* ...
+ \_Steps to execute the app locally_
+
+> Run `bin/rails server` in the console in the working directory
+
+
+## Acknowledgements
+
+Hotwire tutorial by Andrea Fomera [Learn Hotwire by building a Forum](https://store.afomera.dev/learn-hotwire)
