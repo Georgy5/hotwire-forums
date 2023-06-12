@@ -1,7 +1,11 @@
 <div id="<%= dom_id(discussion) %>" class="mb-2">
   <h2><%= discussion.name %></h2>
   Pinned: <%= discussion.pinned %> | Closed: <%= discussion.closed %>
-  <div>
-    <%= link_to "Edit", edit_discussion_path(discussion) %>
+  <div class="d-flex mb-3">
+    <%= link_to "Edit", edit_discussion_path(discussion),
+      class: "btn btn-secondary me-1 " %>
+    <%= button_to "Delete", discussion, method: :delete,
+          data: { turbo_confirm: "Are you sure? This cannot be undone" },
+      class: "btn btn-danger" %>
   </div>
 </div>
