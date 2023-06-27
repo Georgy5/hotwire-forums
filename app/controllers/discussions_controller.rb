@@ -1,9 +1,12 @@
 class DiscussionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_discussion, only: [:edit, :update, :destroy]
+  before_action :set_discussion, only: [:show, :edit, :update, :destroy]
 
   def index
     @discussions = Discussion.all
+  end
+
+  def show
   end
 
   def new
