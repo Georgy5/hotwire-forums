@@ -18,8 +18,7 @@ class DiscussionsController < ApplicationController
 
     respond_to do |format|
       if @discussion.save
-        format.html { redirect_to discussions_path,
-          notice: "Discussion create" }
+        format.html { redirect_to @discussion, notice: "Discussion create" }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -32,8 +31,7 @@ class DiscussionsController < ApplicationController
   def update
     respond_to do |format|
       if @discussion.update(discussion_params)
-        format.html { redirect_to discussions_path,
-          notice: "Discussion updated" }
+        format.html { redirect_to @discussion, notice: "Discussion updated" }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
