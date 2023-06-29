@@ -3,6 +3,8 @@ class Discussion < ApplicationRecord
 
   validates :name, presence: true
 
+  broadcasts_to -> (discussion) { "discussions" }, inserts_by: :prepend
+
   def to_param
     "#{id}-#{name.to_s[0...100].parameterize}"
   end
